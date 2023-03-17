@@ -1,0 +1,23 @@
+@charset "UTF-8";
+@media screen {
+    * {
+        box-sizing: border-box;
+    }
+}
+@media screen and (max-width: 699px) {
+    .displaySmallNo {
+        display: none;
+    }
+}
+@media screen and (min-width: 700px) {
+    .displayBigNo {
+        display: none;
+    }
+}
+@media screen and (min-width: 900px) {}
+@media screen and (min-width: 1200px) {}
+@media print {
+    .displayPrintNo {
+        display: none;
+    }
+}
