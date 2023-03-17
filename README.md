@@ -7,3 +7,6 @@
 - sync / async
 - "/" by cookie / async request
 - "/de" etc. by SSR
+
+Demo @
+[languageswitch.dunkake.ch](https://languageswitch.dunkake.ch)
