@@ -13,13 +13,8 @@
         }
 
         public function view(string|null $view, $data = []) {
-            if(!isset($view) || empty($view)) {
-                $view = DEFAULT_VIEW;
-            }
             if(file_exists(ROOT_FILE . '/views/' . $view . '.php')){
                 require_once ROOT_FILE . '/views/' . $view . '.php';
-            } else {
-                exit('View does not exist');
             }
         }
     }

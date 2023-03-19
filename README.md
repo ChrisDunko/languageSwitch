@@ -1,7 +1,7 @@
 # LanguageSwitch
 
 ## Labels
-- 4 languages
+- 4 languages (2 are implemented but additional languages only require a new file in copy)
 - 0-n segments
 ## Extras
 - sync / async

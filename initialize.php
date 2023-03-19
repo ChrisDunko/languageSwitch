@@ -30,4 +30,9 @@
             include ROOT_FILE . '/models/' . strtolower($class) . '_model.php';
         }
     });
+    spl_autoload_register(function ($class) {
+        if(file_exists(ROOT_FILE . '/helpers/' . strtolower($class) . '.php')) {
+            include ROOT_FILE . '/helpers/' . strtolower($class) . '.php';
+        }
+    });
     require ROOT_FILE . '/vendor/autoload.php';
