@@ -30,10 +30,10 @@
             include ROOT_FILE . '/models/' . strtolower($class) . '_model.php';
         }
     });
-    spl_autoload_register(function ($class) {
-        $file = str_replace('\\', '/', $class);
-        if(file_exists(ROOT_FILE . '/' . strtolower($file) . '.php')) {
-            include ROOT_FILE . '/' . strtolower($file) . '.php';
-        }
-    });
+//    spl_autoload_register(function ($class) {
+//        $file = str_replace('\\', '/', $class);
+//        if(file_exists(ROOT_FILE . '/' . strtolower($file) . '.php')) {
+//            include ROOT_FILE . '/' . strtolower($file) . '.php';
+//        }
+//    });
     require ROOT_FILE . '/vendor/autoload.php';
