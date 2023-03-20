@@ -1,7 +1,5 @@
 <?php declare(strict_types=1);
-
-//    include /helpers\i18n::class;
-//    use helpers\i18n;
+    use Helpers\i18n;
 
     class Index extends Controller {
 

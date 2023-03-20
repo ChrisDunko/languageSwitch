@@ -56,7 +56,7 @@
 
         <hr>
 
-        <div>Switch to <a href="/de">DE</a> | <a href="/en">EN</a></div>
+        <div>Switch to <a href="/de">de</a> | <a href="/en">en</a></div>
     </div>
 </body>
 </html>

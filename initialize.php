@@ -31,8 +31,9 @@
         }
     });
     spl_autoload_register(function ($class) {
-        if(file_exists(ROOT_FILE . '/helpers/' . strtolower($class) . '.php')) {
-            include ROOT_FILE . '/helpers/' . strtolower($class) . '.php';
+        $file = str_replace('\\', '/', $class);
+        if(file_exists(ROOT_FILE . '/' . strtolower($file) . '.php')) {
+            include ROOT_FILE . '/' . strtolower($file) . '.php';
         }
     });
     require ROOT_FILE . '/vendor/autoload.php';
