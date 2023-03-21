@@ -11,8 +11,10 @@
             if(!$language) {
                 $language = 'de';
             }
-            $copy = i18n::get_by_language($language);
-            $data['copy'] = $copy;
+            $copyObject = new i18n($language);
+//            $copy = i18n::get_by_language($language);
+//            $data['copy'] = $copy;
+            $data['copyObject'] = $copyObject;
             $this->view('index', $data);
         }
     }

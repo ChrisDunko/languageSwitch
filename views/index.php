@@ -34,22 +34,23 @@
             grid-template-columns: 100px 250px;
         }
     </style>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
 </head>
 <body>
-    <div>
+    <div id="contentcontainer">
         <h1>NewCorp.</h1>
 
         <form>
             <div>
                 <span>&nbsp;</span>
-                <p><?php echo $data['copy']['welcome'][0] ?? 'LABEL MISSING' ?> Stefan, <?php echo $data['copy']['welcome'][1] ?? 'LABEL MISSING' ?></p>
+                <p>{{copy.welcome[0]}} Stefan, {{copy.welcome[1]}}</p>
             </div>
             <div>
-                <label for="name_first"><?php echo $data['copy']['name_first'][0] ?? 'LABEL MISSING' ?></label>
+                <label for="name_first">{{copy.name_first[0]}}</label>
                 <input type="text" name="name_first" id="name_first">
             </div>
             <div>
-                <label for="name_last"><?php echo $data['copy']['name_last'][0] ?? 'LABEL MISSING' ?></label>
+                <label for="name_last">{{copy.name_last[0]}}</label>
                 <input type="text" name="name_last" id="name_last">
             </div>
         </form>
@@ -58,5 +59,15 @@
 
         <div>Switch to <a href="/de">de</a> | <a href="/en">en</a></div>
     </div>
+    <script>
+        const app = new Vue({
+            el: '#contentcontainer',
+            data() {
+                return {
+                    copy: JSON.parse('<?php echo json_encode($data['copyObject']) ?>')
+                }
+            }
+        });
+    </script>
 </body>
 </html>

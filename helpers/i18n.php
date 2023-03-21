@@ -3,6 +3,23 @@
 
     class i18n
     {
+        public function __construct(string $language = 'en')
+        {
+            $copy = static::get_copy_by_language_from_file($language);
+            if(!$copy) {
+                echo 'failed to read file';
+                exit();
+            }
+            foreach($copy as $label => $text) {
+                $this->$label = $text;
+            }
+        }
+
+        public function get_copy(string $label): string
+        {
+            return $this->$label ?? 'LABEL MISSING';
+        }
+
         public static function get_by_language(string $language = 'en'): array
         {
             return self::get_copy_by_language_from_file($language);
