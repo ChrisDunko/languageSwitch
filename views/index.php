@@ -43,14 +43,14 @@
         <form>
             <div>
                 <span>&nbsp;</span>
-                <p>{{copy.welcome[0]}} Stefan, {{copy.welcome[1]}}</p>
+                <p>{{copy.welcome}}</p>
             </div>
             <div>
-                <label for="name_first">{{copy.name_first[0]}}</label>
+                <label for="name_first">{{copy.name_first}}</label>
                 <input type="text" name="name_first" id="name_first">
             </div>
             <div>
-                <label for="name_last">{{copy.name_last[0]}}</label>
+                <label for="name_last">{{copy.name_last}}</label>
                 <input type="text" name="name_last" id="name_last">
             </div>
         </form>

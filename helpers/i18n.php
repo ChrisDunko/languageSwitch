@@ -5,7 +5,7 @@
     {
         public function __construct(string $language = 'en')
         {
-            $copy = static::get_copy_by_language_from_file($language);
+            $copy = static::get_copy_by_language_from_json_file($language);
             if(!$copy) {
                 echo 'failed to read file';
                 exit();
@@ -22,10 +22,11 @@
 
         public static function get_by_language(string $language = 'en'): array
         {
-            return self::get_copy_by_language_from_file($language);
+//            return self::get_copy_by_language_from_csv_file($language);
+            return self::get_copy_by_language_from_json_file($language);
         }
 
-        protected static function get_copy_by_language_from_file(string $language = 'de'): array
+        protected static function get_copy_by_language_from_csv_file(string $language = 'de'): array
         {
             if(!file_exists(ROOT_FILE . "/helpers/copy/" . $language . ".csv")) {
                 return [];
@@ -38,5 +39,14 @@
             }
             fclose($handle);
             return $copy;
+        }
+
+        protected static function get_copy_by_language_from_json_file(string $language = 'de'): array
+        {
+            if(!file_exists(ROOT_FILE . "/helpers/copy/" . $language . ".json")) {
+                return [];
+            }
+            $json = file_get_contents(ROOT_FILE . "/helpers/copy/" . $language . ".json");
+            return json_decode($json, true);
         }
     }
